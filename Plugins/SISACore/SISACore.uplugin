@@ -1,0 +1,25 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "SISA Core",
+	"Description": "Shared kernel for the SISA artillery simulation system: cross-plugin value objects, the result/error type, and the event bus. No dependency on any other SISA plugin.",
+	"Category": "SISA",
+	"CreatedBy": "SISA Project",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"EnabledByDefault": true,
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "SISACore",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}

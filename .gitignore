@@ -1,0 +1,20 @@
+# Unreal Engine generated/build directories
+Binaries/
+Intermediate/
+DerivedDataCache/
+Saved/
+Build/
+
+# IDE / generated project files
+*.sln
+*.slnx
+.vs/
+.vsconfig
+*.VC.db
+*.VC.opendb
+
+# Cesium local cache
+cesium-request-cache.sqlite*
+
+# Backup folder created by the editor
+Backup/
