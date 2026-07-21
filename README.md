@@ -8,6 +8,8 @@ El proyecto parte de una base ya funcional (Unreal Engine 5.8 + Cesium for Unrea
 
 **Módulo 1 completado**: plugins `SISACore` (shared kernel: value objects de coordenadas, resultado/error, event bus) y `SISAGIS` (única capa de contacto con Cesium: conversión WGS84/ECEF/UTM/MGRS, contrato para capas geoespaciales futuras). Ver [`doc/modulo-01-core-gis.md`](doc/modulo-01-core-gis.md).
 
+**Módulo 2 completado**: plugin `Ballistics` (motor RK4 de trayectoria puro, con viento/temperatura/presión/densidad del aire reales y solve asíncrono; 13/13 tests en verde). Ver [`doc/modulo-02-ballistics.md`](doc/modulo-02-ballistics.md).
+
 ## Stack técnico
 
 - Unreal Engine 5.8, todo en C++ (Blueprints reservados para UI/animaciones/integración visual)
