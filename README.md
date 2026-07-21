@@ -1,0 +1,26 @@
+# SISA — Sistema Integral de Simulación de Artillería
+
+SISA es un simulador profesional de artillería construido sobre **Unreal Engine 5.8** (C++) y **Cesium for Unreal**, pensado para entrenamiento, análisis táctico y simulación balística sobre cartografía mundial real (terreno 3D, coordenadas geográficas), con una arquitectura preparada para evolucionar hacia integración con hardware físico y realidad virtual sin reescribir la lógica de simulación.
+
+El proyecto parte de una base ya funcional (Unreal Engine 5.8 + Cesium for Unreal integrados, con visualización de globo, navegación y terreno 3D operativos) y se desarrolla de forma incremental, módulo por módulo, sobre una arquitectura de plugins desacoplados siguiendo SOLID, Clean Architecture y Domain-Driven Design.
+
+## Estado actual
+
+**Módulo 1 completado**: plugins `SISACore` (shared kernel: value objects de coordenadas, resultado/error, event bus) y `SISAGIS` (única capa de contacto con Cesium: conversión WGS84/ECEF/UTM/MGRS, contrato para capas geoespaciales futuras). Ver [`doc/modulo-01-core-gis.md`](doc/modulo-01-core-gis.md).
+
+## Stack técnico
+
+- Unreal Engine 5.8, todo en C++ (Blueprints reservados para UI/animaciones/integración visual)
+- Cesium for Unreal (terreno 3D, coordenadas geográficas reales)
+- Enhanced Input
+- Arquitectura basada en plugins de Unreal Engine, uno por responsabilidad (GIS, Artillery, Ballistics, Ammunition, Simulation, Hardware, Networking, VR)
+
+## Documentación
+
+Toda la documentación del proyecto vive en [`doc/`](doc/):
+
+- [`doc/fases-desarrollo.md`](doc/fases-desarrollo.md) — las 3 fases del proyecto y qué incluye cada una.
+- [`doc/arquitectura.md`](doc/arquitectura.md) — descomposición en plugins, grafo de dependencias, convenciones y patrones transversales.
+- [`doc/modulo-01-core-gis.md`](doc/modulo-01-core-gis.md) — diseño, clases, decisiones y plan de pruebas del Módulo 1.
+
+Para instrucciones de compilación, estructura del código fuente y guía de trabajo en el repositorio, ver [`CLAUDE.md`](CLAUDE.md).
