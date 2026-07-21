@@ -18,12 +18,12 @@ Unreal Engine no tiene "capas" nativas de Clean Architecture, así que la adapta
 |---|---|---|
 | **SISACore** | Shared kernel: value objects comunes (coordenadas, `TSisaResult<T>`/`FSisaError`), event bus (`USisaEventBusSubsystem`) | — |
 | **SISAGIS** | Única capa de contacto con Cesium: `IGeoCoordinateService` (WGS84/ECEF/UTM/MGRS/ENU), `IGeoDataLayerProvider` para capas futuras (GeoJSON/KML/Shapefile/DEM/3D Tiles/imágenes/tácticas) | SISACore, CesiumForUnreal |
-| **Ballistics** | Motor matemático de trayectoria, extensible a viento/temperatura/humedad/presión/Coriolis, cálculo asíncrono | SISACore |
+| **Ballistics** | Motor matemático de trayectoria con viento, temperatura, presión y densidad del aire como variables reales del cálculo (no solo un contrato para el futuro), cálculo asíncrono. Efecto Coriolis/rotación terrestre quedan como extensión futura | SISACore |
 | **Ammunition** | Catálogo de municiones vía `PrimaryDataAsset`/`DataTable` | SISACore |
 | **Artillery** | Entidades/Actors de piezas de artillería, inventario, historial de disparos | SISACore, SISAGIS, Ammunition, Ballistics |
 | **Hardware** | `IHardwareController` + implementación simulada por defecto (Fase 1); implementaciones reales en Fase 2 sin tocar Simulation | SISACore |
 | **Networking** | Interfaces/DTOs cliente-servidor-instructor-observador + implementación local no-op (Fase 1) | SISACore |
-| **Simulation** | Orquesta escenarios, aloja la UI estilo C4ISR (CommonUI) | SISACore, SISAGIS, Artillery, Ammunition, Ballistics, Hardware\*, Networking\* |
+| **Simulation** | Orquesta escenarios, aloja la UI estilo C4ISR (CommonUI): colocación/selección de piezas sobre el mapa, círculos de área afectada (radio efectivo/letal) en el punto de impacto, y estela Niagara del proyectil en vuelo | SISACore, SISAGIS, Artillery, Ammunition, Ballistics, Hardware\*, Networking\* |
 | **VR** | Reutiliza el 100% de Simulation; solo cambia la interacción (Fase 3) | SISACore, Simulation |
 
 \* Simulation depende de las **interfaces** de Hardware/Networking, nunca de una implementación física — así el cambio Fase 1→2 no toca lógica de simulación.
