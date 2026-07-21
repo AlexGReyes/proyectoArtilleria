@@ -24,6 +24,10 @@
 			"Enabled": true
 		},
 		{
+			"Name": "Ammunition",
+			"Enabled": true
+		},
+		{
 			"Name": "ModelingToolsEditorMode",
 			"Enabled": true,
 			"TargetAllowList": [

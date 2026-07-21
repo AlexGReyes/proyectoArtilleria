@@ -19,7 +19,7 @@ Unreal Engine no tiene "capas" nativas de Clean Architecture, así que la adapta
 | **SISACore** | Shared kernel: value objects comunes (coordenadas, `TSisaResult<T>`/`FSisaError`), event bus (`USisaEventBusSubsystem`) | — |
 | **SISAGIS** | Única capa de contacto con Cesium: `IGeoCoordinateService` (WGS84/ECEF/UTM/MGRS/ENU), `IGeoDataLayerProvider` para capas futuras (GeoJSON/KML/Shapefile/DEM/3D Tiles/imágenes/tácticas) | SISACore, CesiumForUnreal |
 | **Ballistics** | Motor matemático de trayectoria con viento, temperatura, presión y densidad del aire como variables reales del cálculo (no solo un contrato para el futuro), cálculo asíncrono. Efecto Coriolis/rotación terrestre quedan como extensión futura | SISACore |
-| **Ammunition** | Catálogo de municiones vía `PrimaryDataAsset`/`DataTable` | SISACore |
+| **Ammunition** | Catálogo de municiones vía `PrimaryDataAsset`/`DataTable`; aporta los parámetros balísticos del proyectil y los radios efectivo/letal del área afectada | SISACore, Ballistics |
 | **Artillery** | Entidades/Actors de piezas de artillería, inventario, historial de disparos | SISACore, SISAGIS, Ammunition, Ballistics |
 | **Hardware** | `IHardwareController` + implementación simulada por defecto (Fase 1); implementaciones reales en Fase 2 sin tocar Simulation | SISACore |
 | **Networking** | Interfaces/DTOs cliente-servidor-instructor-observador + implementación local no-op (Fase 1) | SISACore |
@@ -36,7 +36,7 @@ Los nombres de plugin llevan el prefijo `SISA` (`SISACore`, `SISAGIS`, ...) cuan
 SISACore
  ├─ SISAGIS
  ├─ Ballistics
- ├─ Ammunition
+ ├─ Ammunition   (Ballistics)
  ├─ Hardware
  ├─ Networking
  ├─ Artillery    (SISAGIS + Ammunition + Ballistics)

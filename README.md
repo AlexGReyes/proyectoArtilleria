@@ -10,6 +10,8 @@ El proyecto parte de una base ya funcional (Unreal Engine 5.8 + Cesium for Unrea
 
 **Módulo 2 completado**: plugin `Ballistics` (motor RK4 de trayectoria puro, con viento/temperatura/presión/densidad del aire reales y solve asíncrono; 13/13 tests en verde). Ver [`doc/modulo-02-ballistics.md`](doc/modulo-02-ballistics.md).
 
+**Módulo 3 completado**: plugin `Ammunition` (catálogo data-driven de municiones vía Primary Data Assets / Data Tables, con registro, validación y puente a Ballistics/área afectada; 11/11 tests en verde). Ver [`doc/modulo-03-ammunition.md`](doc/modulo-03-ammunition.md).
+
 ## Stack técnico
 
 - Unreal Engine 5.8, todo en C++ (Blueprints reservados para UI/animaciones/integración visual)

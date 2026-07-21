@@ -1,0 +1,35 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "SISA Ammunition",
+	"Description": "Data-driven munition catalog for the SISA artillery simulation system: munition definitions (Primary Data Assets or Data Tables), a lookup registry, and the bridge to ballistic projectile parameters and affected-area geometry.",
+	"Category": "SISA",
+	"CreatedBy": "SISA Project",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"EnabledByDefault": true,
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "Ammunition",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "SISACore",
+			"Enabled": true
+		},
+		{
+			"Name": "Ballistics",
+			"Enabled": true
+		}
+	]
+}

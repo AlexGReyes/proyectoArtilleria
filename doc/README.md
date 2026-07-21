@@ -4,5 +4,6 @@
 - [`arquitectura.md`](arquitectura.md) — descomposición en plugins, grafo de dependencias, convenciones de carpetas y patrones transversales.
 - [`modulo-01-core-gis.md`](modulo-01-core-gis.md) — módulo 1 (`SISACore` + `SISAGIS`): propósito, clases, decisiones de diseño, limitaciones conocidas y plan de pruebas.
 - [`modulo-02-ballistics.md`](modulo-02-ballistics.md) — módulo 2 (`Ballistics`): motor RK4 de trayectoria con viento/temperatura/presión/densidad del aire reales, solve asíncrono, y plan de pruebas (13/13 en verde).
+- [`modulo-03-ammunition.md`](modulo-03-ammunition.md) — módulo 3 (`Ammunition`): catálogo data-driven de municiones (Primary Data Assets / Data Tables), registro, validación y puente a Ballistics/área afectada (11/11 en verde).
 
-Los próximos módulos (Ammunition, Artillery, Hardware, Simulation, Networking, VR) añaden un archivo `modulo-NN-<nombre>.md` cada uno a medida que se completan, siguiendo el orden descrito en `arquitectura.md`.
+Los próximos módulos (Artillery, Hardware, Simulation, Networking, VR) añaden un archivo `modulo-NN-<nombre>.md` cada uno a medida que se completan, siguiendo el orden descrito en `arquitectura.md`.
