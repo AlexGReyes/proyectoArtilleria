@@ -12,6 +12,8 @@ El proyecto parte de una base ya funcional (Unreal Engine 5.8 + Cesium for Unrea
 
 **Módulo 3 completado**: plugin `Ammunition` (catálogo data-driven de municiones vía Primary Data Assets / Data Tables, con registro, validación y puente a Ballistics/área afectada; 11/11 tests en verde). Ver [`doc/modulo-03-ammunition.md`](doc/modulo-03-ammunition.md).
 
+**Módulo 4 completado**: plugin `Artillery` (definición data-driven de piezas, Actor de pieza con posición geográfica/estado operativo, laying con límites y velocidades reales, inventario, historial de disparos, catálogo y roster con selección; 32/32 tests en verde). Ver [`doc/modulo-04-artillery.md`](doc/modulo-04-artillery.md).
+
 ## Stack técnico
 
 - Unreal Engine 5.8, todo en C++ (Blueprints reservados para UI/animaciones/integración visual)
@@ -25,6 +27,6 @@ Toda la documentación del proyecto vive en [`doc/`](doc/):
 
 - [`doc/fases-desarrollo.md`](doc/fases-desarrollo.md) — las 3 fases del proyecto y qué incluye cada una.
 - [`doc/arquitectura.md`](doc/arquitectura.md) — descomposición en plugins, grafo de dependencias, convenciones y patrones transversales.
-- [`doc/modulo-01-core-gis.md`](doc/modulo-01-core-gis.md) — diseño, clases, decisiones y plan de pruebas del Módulo 1.
+- [`doc/modulo-01-core-gis.md`](doc/modulo-01-core-gis.md) — diseño, clases, decisiones y plan de pruebas del Módulo 1 (y análogamente `modulo-02-ballistics.md`, `modulo-03-ammunition.md`, `modulo-04-artillery.md`).
 
 Para instrucciones de compilación, estructura del código fuente y guía de trabajo en el repositorio, ver [`CLAUDE.md`](CLAUDE.md).

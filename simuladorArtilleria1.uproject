@@ -28,6 +28,10 @@
 			"Enabled": true
 		},
 		{
+			"Name": "Artillery",
+			"Enabled": true
+		},
+		{
 			"Name": "ModelingToolsEditorMode",
 			"Enabled": true,
 			"TargetAllowList": [

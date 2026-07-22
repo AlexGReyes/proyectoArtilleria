@@ -70,9 +70,9 @@ simuladorArtilleria1/
 Por dependencias, no por el orden en que se listaron las features originalmente:
 
 1. **SISACore + SISAGIS** — fundacional (✅ completado, ver `doc/modulo-01-core-gis.md`)
-2. **Ballistics** — motor puro, independiente de Artillery
-3. **Ammunition**
-4. **Artillery**
+2. **Ballistics** — motor puro, independiente de Artillery (✅ completado, ver `doc/modulo-02-ballistics.md`)
+3. **Ammunition** (✅ completado, ver `doc/modulo-03-ammunition.md`)
+4. **Artillery** (✅ completado, ver `doc/modulo-04-artillery.md`)
 5. **Hardware** (interfaz + implementación simulada)
 6. **Simulation** (orquestación, escenarios, UI C4ISR) + **Networking** (interfaces/stub)
 7. **VR** — no antes de Fase 3

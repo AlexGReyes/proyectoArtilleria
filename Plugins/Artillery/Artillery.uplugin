@@ -1,0 +1,43 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "SISA Artillery",
+	"Description": "Artillery pieces for the SISA artillery simulation system: data-driven piece definitions, the piece Actor with its laying (azimuth/elevation), ammunition inventory and fire-history components, plus the definition catalog and the live roster/selection used by the C4ISR panels.",
+	"Category": "SISA",
+	"CreatedBy": "SISA Project",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"EnabledByDefault": true,
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "Artillery",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "SISACore",
+			"Enabled": true
+		},
+		{
+			"Name": "SISAGIS",
+			"Enabled": true
+		},
+		{
+			"Name": "Ballistics",
+			"Enabled": true
+		},
+		{
+			"Name": "Ammunition",
+			"Enabled": true
+		}
+	]
+}
