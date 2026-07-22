@@ -12,7 +12,11 @@ El proyecto parte de una base ya funcional (Unreal Engine 5.8 + Cesium for Unrea
 
 **Módulo 3 completado**: plugin `Ammunition` (catálogo data-driven de municiones vía Primary Data Assets / Data Tables, con registro, validación y puente a Ballistics/área afectada; 11/11 tests en verde). Ver [`doc/modulo-03-ammunition.md`](doc/modulo-03-ammunition.md).
 
-**Módulo 4 completado**: plugin `Artillery` (definición data-driven de piezas, Actor de pieza con posición geográfica/estado operativo, laying con límites y velocidades reales, inventario, historial de disparos, catálogo y roster con selección; 32/32 tests en verde). Ver [`doc/modulo-04-artillery.md`](doc/modulo-04-artillery.md).
+**Módulo 4 completado**: plugin `Artillery` (definición data-driven de piezas, Actor de pieza con posición geográfica/estado operativo, laying con límites y velocidades reales, inventario, historial de disparos, catálogo y roster con selección; 34/34 tests en verde). Ver [`doc/modulo-04-artillery.md`](doc/modulo-04-artillery.md).
+
+**Módulo 5 completado**: plugin `Hardware` (costura `IHardwareController` con el contrato completo de transportes de Fase 2, controlador simulado de Fase 1, subsystem con factorías por tipo de dispositivo y telemetría en el event bus; 34/34 tests en verde). Ver [`doc/modulo-05-hardware.md`](doc/modulo-05-hardware.md).
+
+Suite completa: **112/112 tests en verde**.
 
 ## Stack técnico
 

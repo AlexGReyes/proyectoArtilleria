@@ -1,0 +1,31 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "SISA Hardware",
+	"Description": "Hardware abstraction for the SISA artillery simulation system: the IHardwareController seam plus the simulated controller used in Phase 1. Real controllers (Arduino, ESP32, PLC, STM32 over serial/RS485/CAN/TCP/UDP) plug in during Phase 2 without touching simulation logic.",
+	"Category": "SISA",
+	"CreatedBy": "SISA Project",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"EnabledByDefault": true,
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "Hardware",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "SISACore",
+			"Enabled": true
+		}
+	]
+}

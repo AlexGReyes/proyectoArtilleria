@@ -1,6 +1,6 @@
 # Módulo 4 — Artillery (piezas de artillería, inventario e historial de disparos)
 
-**Estado**: completado, compilando (`simuladorArtilleria1Editor`, Development, `Result: Succeeded`) y con **32/32 tests en verde**.
+**Estado**: completado, compilando (`simuladorArtilleria1Editor`, Development, `Result: Succeeded`) y con **34/34 tests en verde**.
 
 ## Propósito
 
@@ -63,9 +63,9 @@ Canales del event bus de SISACore, con un tipo de payload por canal: `SISA.Artil
 - `CanFire` exige que el tubo esté asentado (`IsOnTarget`). Es el comportamiento realista, pero implica que un escenario que coloca piezas y dispara en el mismo frame debe usar `SnapToOrderedLaying()`.
 - Los valores de pieza usados en tests (155 mm tipo M114A1) son datos de prueba plausibles, **no una tabla de tiro certificada**.
 
-## Plan de pruebas — resultado real (32/32 en verde)
+## Plan de pruebas — resultado real (34/34 en verde)
 
-Ejecutado headless con `Automation RunTests SISA.Artillery -testexit="Automation Test Queue Empty"` (reporte JSON: `succeeded=32, failed=0, notRun=0`).
+Ejecutado headless con `Automation RunTests SISA.Artillery -testexit="Automation Test Queue Empty"` (reporte JSON: 34 casos, `failed=0, notRun=0`; dos de ellos cuentan como "succeeded with warnings" porque ejercitan deliberadamente rutas que registran un `UE_LOG(Warning)` al rechazar definiciones inválidas).
 
 - `SISA.Artillery.Definition` (`ArtilleryPieceDefinitionSpec.cpp`, 8): validación (pieza correcta, id vacío, alcance máximo por debajo del mínimo, límites de elevación invertidos, velocidades no positivas), sobre de alcance, y compatibilidad de munición con y sin lista de autorización.
 - `SISA.Artillery.Laying` (`ArtilleryLayingSpec.cpp`, 12): normalización de azimut, camino más corto por la brújula, recorte al arco de travesía (incluido un arco que cruza el Norte y un montaje de travesía total), `OrderLaying` recortando sin mover el tubo, y `Step` (respeta las velocidades, no sobrepasa, cruza el Norte por el lado corto, converge en el número de pasos esperado, ignora delta time no positivo).

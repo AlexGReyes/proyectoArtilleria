@@ -16,7 +16,7 @@ Unreal Engine no tiene "capas" nativas de Clean Architecture, así que la adapta
 
 | Plugin | Propósito | Depende de |
 |---|---|---|
-| **SISACore** | Shared kernel: value objects comunes (coordenadas, `TSisaResult<T>`/`FSisaError`), event bus (`USisaEventBusSubsystem`) | — |
+| **SISACore** | Shared kernel: value objects comunes (coordenadas, `TSisaResult<T>`/`FSisaError`), matemática de ángulos de brújula (`SisaAngle`), event bus (`USisaEventBusSubsystem`) | — |
 | **SISAGIS** | Única capa de contacto con Cesium: `IGeoCoordinateService` (WGS84/ECEF/UTM/MGRS/ENU), `IGeoDataLayerProvider` para capas futuras (GeoJSON/KML/Shapefile/DEM/3D Tiles/imágenes/tácticas) | SISACore, CesiumForUnreal |
 | **Ballistics** | Motor matemático de trayectoria con viento, temperatura, presión y densidad del aire como variables reales del cálculo (no solo un contrato para el futuro), cálculo asíncrono. Efecto Coriolis/rotación terrestre quedan como extensión futura | SISACore |
 | **Ammunition** | Catálogo de municiones vía `PrimaryDataAsset`/`DataTable`; aporta los parámetros balísticos del proyectil y los radios efectivo/letal del área afectada | SISACore, Ballistics |
@@ -73,6 +73,6 @@ Por dependencias, no por el orden en que se listaron las features originalmente:
 2. **Ballistics** — motor puro, independiente de Artillery (✅ completado, ver `doc/modulo-02-ballistics.md`)
 3. **Ammunition** (✅ completado, ver `doc/modulo-03-ammunition.md`)
 4. **Artillery** (✅ completado, ver `doc/modulo-04-artillery.md`)
-5. **Hardware** (interfaz + implementación simulada)
+5. **Hardware** (interfaz + implementación simulada) (✅ completado, ver `doc/modulo-05-hardware.md`)
 6. **Simulation** (orquestación, escenarios, UI C4ISR) + **Networking** (interfaces/stub)
 7. **VR** — no antes de Fase 3

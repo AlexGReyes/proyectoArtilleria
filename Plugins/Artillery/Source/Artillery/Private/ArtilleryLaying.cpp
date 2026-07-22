@@ -1,23 +1,17 @@
 #include "ArtilleryLaying.h"
+#include "SisaAngle.h"
 
+// The compass math itself lives in SISACore (SisaAngle.h) so Hardware's
+// simulated mount slews with exactly the same rules; these two stay as the
+// artillery-facing names of those operations.
 double FArtilleryLayingSolver::NormalizeAzimuth(double AzimuthDegrees)
 {
-	const double Wrapped = FMath::Fmod(AzimuthDegrees, 360.0);
-	return Wrapped < 0.0 ? Wrapped + 360.0 : Wrapped;
+	return SisaAngle::Normalize360(AzimuthDegrees);
 }
 
 double FArtilleryLayingSolver::ShortestAzimuthDelta(double FromDegrees, double ToDegrees)
 {
-	double Delta = NormalizeAzimuth(ToDegrees) - NormalizeAzimuth(FromDegrees);
-	if (Delta > 180.0)
-	{
-		Delta -= 360.0;
-	}
-	else if (Delta <= -180.0)
-	{
-		Delta += 360.0;
-	}
-	return Delta;
+	return SisaAngle::ShortestDelta(FromDegrees, ToDegrees);
 }
 
 double FArtilleryLayingSolver::ClampAzimuthToArc(double DesiredAzimuthDegrees, double MountAzimuthDegrees, double TraverseHalfArcDegrees)
@@ -73,14 +67,15 @@ FArtilleryLayingState FArtilleryLayingSolver::Step(
 		return Stepped;
 	}
 
-	const double AzimuthDelta = ShortestAzimuthDelta(State.CurrentAzimuthDegrees, State.TargetAzimuthDegrees);
-	const double MaxAzimuthStep = Definition.TraverseRateDegreesPerSecond * DeltaSeconds;
-	const double AzimuthStep = FMath::Clamp(AzimuthDelta, -MaxAzimuthStep, MaxAzimuthStep);
-	Stepped.CurrentAzimuthDegrees = NormalizeAzimuth(State.CurrentAzimuthDegrees + AzimuthStep);
+	Stepped.CurrentAzimuthDegrees = SisaAngle::StepTowards(
+		State.CurrentAzimuthDegrees,
+		State.TargetAzimuthDegrees,
+		Definition.TraverseRateDegreesPerSecond * DeltaSeconds);
 
-	const double ElevationDelta = State.TargetElevationDegrees - State.CurrentElevationDegrees;
-	const double MaxElevationStep = Definition.ElevationRateDegreesPerSecond * DeltaSeconds;
-	Stepped.CurrentElevationDegrees = State.CurrentElevationDegrees + FMath::Clamp(ElevationDelta, -MaxElevationStep, MaxElevationStep);
+	Stepped.CurrentElevationDegrees = SisaAngle::StepTowardsLinear(
+		State.CurrentElevationDegrees,
+		State.TargetElevationDegrees,
+		Definition.ElevationRateDegreesPerSecond * DeltaSeconds);
 
 	return Stepped;
 }

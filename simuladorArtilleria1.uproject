@@ -32,6 +32,10 @@
 			"Enabled": true
 		},
 		{
+			"Name": "Hardware",
+			"Enabled": true
+		},
+		{
 			"Name": "ModelingToolsEditorMode",
 			"Enabled": true,
 			"TargetAllowList": [
